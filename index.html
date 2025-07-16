@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Invitation Anniversaire !</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="slide-down">🎉 Invitation d'Anniversaire 🎉</h1>
+        <p class="fade-in">
+            Tu es invité(e) à venir célébrer mon anniversaire <br />
+            <span class="date">le 25 juillet</span> en <span class="lieu">Corse</span> !<br />
+            <span class="theme">Thème : tout en blanc 🤍</span><br />
+            Prépare-toi pour une soirée inoubliable sous le soleil corse !
+        </p>
+        <!-- Compte à rebours -->
+        <div id="countdown" class="countdown fade-in"></div>
+
+        <!-- Bouton WhatsApp -->
+        <a id="whatsapp-btn" class="whatsapp-btn fade-in">Confirmer ma présence sur WhatsApp</a>
+
+        <div class="animation">
+            <div class="bulle"></div>
+            <div class="bulle"></div>
+            <div class="bulle"></div>
+        </div>
+    </div>
+    <footer>
+        <p>Merci de confirmer ta présence !</p>
+    </footer>
+    <script src="main.js"></script>
+    <script>
+        // ton numéro encodé en Base64 (ou autre)  
+        const encoded = 'MzM2Mjk3MjYwMjI=';
+        const numero = atob(encoded);
+        const msg = encodeURIComponent(
+            "Salut ! Je confirme ma présence à ton anniversaire le 25 juillet en Corse 😊"
+        );
+        const url = `https://wa.me/${numero}?text=${msg}`;
+        document.getElementById("whatsapp-btn").setAttribute("href", url);
+    </script>
+
+</body>
+
+</html>
